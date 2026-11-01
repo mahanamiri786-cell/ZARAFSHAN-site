@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="نان ماشینی زرافشان شهر مزارشریف؛ نان لواش تازه و باکیفیت.">
+  <title>نان ماشینی زرافشان | مزارشریف</title>
+  <style>
+    :root { --ink:#263329; --green:#24583d; --gold:#d6a64b; --cream:#fffaf0; }
+    * { box-sizing:border-box; }
+    body { margin:0; font-family:Tahoma,Arial,sans-serif; color:var(--ink); background:var(--cream); line-height:1.9; }
+    header { background:linear-gradient(135deg,#19452f,#39734c); color:white; padding:42px 20px; text-align:center; }
+    .brand { font-size:clamp(30px,6vw,48px); font-weight:800; margin:0 0 8px; }
+    .tagline { color:#f5dfad; font-size:18px; margin:0; }
+    main { width:min(940px,92%); margin:30px auto; }
+    .photo-area { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:15px; margin-bottom:22px; }
+    .photo-slot { margin:0; background:#eee8da; border:2px dashed #b7aa8f; border-radius:16px; overflow:hidden; min-height:190px; display:flex; align-items:center; justify-content:center; position:relative; }
+    .photo-slot img { display:block; width:100%; height:100%; min-height:190px; object-fit:cover; }
+    .photo-slot figcaption { position:absolute; bottom:8px; right:10px; background:#ffffffdf; color:#435044; padding:3px 10px; border-radius:8px; font-size:12px; }
+    .intro { background:white; border-radius:18px; padding:28px; text-align:center; box-shadow:0 8px 28px #26332912; }
+    h2 { color:var(--green); margin:0 0 10px; font-size:24px; }
+    .intro p { margin:0 auto; max-width:650px; font-size:17px; }
+    .contact { margin-top:22px; background:#f2ead8; border-radius:18px; padding:25px; text-align:center; }
+    .numbers { display:flex; flex-wrap:wrap; justify-content:center; gap:12px; margin:18px 0; }
+    .numbers a,.wa { display:inline-block; text-decoration:none; border-radius:10px; padding:11px 18px; font-weight:bold; }
+    .numbers a { background:white; color:var(--green); border:1px solid #d8d0bf; direction:ltr; }
+    .wa { background:#188b50; color:white; padding:13px 24px; margin-top:5px; }
+    footer { text-align:center; padding:20px; color:#6c756d; font-size:13px; }
+    @media(max-width:560px) { .photo-area { grid-template-columns:1fr; } header { padding:35px 15px; } .intro,.contact { padding:21px 16px; } .numbers { flex-direction:column; } .numbers a { width:100%; } }
+  </style>
+</head>
+<body>
+  <header>
+    <p class="brand">نان ماشینی زرافشان</p>
+    <p class="tagline">تازه و باکیفیت | شهر مزارشریف</p>
+  </header>
+  <main>
+    <!-- برای افزودن عکس، تصویر خود را کنار همین فایل بگذارید و نام آن را در src بنویسید. -->
+    <section class="photo-area" aria-label="تصاویر نانوایی و محصولات">
+      <figure class="photo-slot">
+        <img src="photo1.jpg" alt="عکس نان لواش زرافشان" onerror="this.style.display='none';this.parentElement.insertAdjacentHTML('beforeend','<span>جای عکس اول<br>نام فایل: photo1.jpg</span>')">
+        <figcaption>محصولات زرافشان</figcaption>
+      </figure>
+      <figure class="photo-slot">
+        <img src="photo2.jpg" alt="عکس نانوایی زرافشان" onerror="this.style.display='none';this.parentElement.insertAdjacentHTML('beforeend','<span>جای عکس دوم<br>نام فایل: photo2.jpg</span>')">
+        <figcaption>نانوایی زرافشان</figcaption>
+      </figure>
+    </section>
+    <section class="intro">
+      <h2>به زرافشان خوش آمدید</h2>
+      <p>زرافشان، تولیدکننده نان لواش ماشینی در شهر مزارشریف است. هدف ما ارائه نانی تازه و باکیفیت برای سفره‌های خانواده‌هاست. برای معلومات بیشتر و سفارش، با ما تماس بگیرید.</p>
+    </section>
+    <section class="contact">
+      <h2>تماس با ما</h2>
+      <p>برای دریافت معلومات و ثبت سفارش، با یکی از شماره‌های زیر تماس بگیرید:</p>
+      <div class="numbers">
+        <a href="tel:+93794407172">079 440 7172</a>
+        <a href="tel:+93772388940">077 238 8940</a>
+        <a href="tel:+93703137070">070 313 7070</a>
+      </div>
+      <a class="wa" href="https://wa.me/93703137070" target="_blank" rel="noopener">ارتباط از طریق واتساپ</a>
+    </section>
+  </main>
+  <footer>نان ماشینی زرافشان — مزارشریف، افغانستان</footer>
+</body>
+</html>
