@@ -1,66 +1,502 @@
+
 <!doctype html>
 <html lang="fa" dir="rtl">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="نان لواش ماشینی زرافشان در مزارشریف؛ تولید و عرضه نان لواش تازه، خوش‌طعم، باکیفیت و بهداشتی.">
+
+  <meta name="description" content="نان لواش ماشینی زرافشان در مزارشریف؛ تولید و عرضه نان لواش تازه، خوش‌طعم، باکیفیت و بهداشتی. سفارش تلفنی و واتساپی.">
+  <meta name="theme-color" content="#19452f">
+
   <title>نان لواش ماشینی زرافشان | نان تازه در مزارشریف</title>
+
   <style>
-    :root { --ink:#263329; --green:#24583d; --gold:#d6a64b; --cream:#fffaf0; }
+    :root {
+      --green:#19452f;
+      --green2:#286344;
+      --gold:#d6a64b;
+      --cream:#fffaf0;
+      --ink:#263329;
+      --muted:#69766c;
+      --white:#fff;
+    }
+
     * { box-sizing:border-box; }
-    body { margin:0; font-family:Tahoma,Arial,sans-serif; color:var(--ink); background:var(--cream); line-height:1.9; }
-    header { background:linear-gradient(135deg,#19452f,#39734c); color:white; padding:42px 20px; text-align:center; }
-    .brand { font-size:clamp(30px,6vw,48px); font-weight:800; margin:0 0 8px; }
-    .tagline { color:#f5dfad; font-size:18px; margin:0; }
-    main { width:min(940px,92%); margin:30px auto; }
-    .photo-area { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:15px; margin-bottom:22px; }
-    .photo-slot { margin:0; background:#eee8da; border:2px dashed #b7aa8f; border-radius:16px; overflow:hidden; min-height:190px; display:flex; align-items:center; justify-content:center; position:relative; }
-    .photo-slot img { display:block; width:100%; height:100%; min-height:190px; object-fit:cover; }
-    .photo-slot figcaption { position:absolute; bottom:8px; right:10px; background:#ffffffdf; color:#435044; padding:3px 10px; border-radius:8px; font-size:12px; }
-    .intro { background:white; border-radius:18px; padding:28px; text-align:center; box-shadow:0 8px 28px #26332912; }
-    h2 { color:var(--green); margin:0 0 10px; font-size:24px; }
-    .intro p { margin:0 auto; max-width:650px; font-size:17px; }
-    .contact { margin-top:22px; background:#f2ead8; border-radius:18px; padding:25px; text-align:center; }
-    .numbers { display:flex; flex-wrap:wrap; justify-content:center; gap:12px; margin:18px 0; }
-    .numbers a,.wa { display:inline-block; text-decoration:none; border-radius:10px; padding:11px 18px; font-weight:bold; }
-    .numbers a { background:white; color:var(--green); border:1px solid #d8d0bf; direction:ltr; }
-    .wa { background:#188b50; color:white; padding:13px 24px; margin-top:5px; }
-    footer { text-align:center; padding:20px; color:#6c756d; font-size:13px; }
-    @media(max-width:560px) { .photo-area { grid-template-columns:1fr; } header { padding:35px 15px; } .intro,.contact { padding:21px 16px; } .numbers { flex-direction:column; } .numbers a { width:100%; } }
+
+    html { scroll-behavior:smooth; }
+
+    body {
+      margin:0;
+      font-family:Tahoma,Arial,sans-serif;
+      color:var(--ink);
+      background:var(--cream);
+      line-height:1.9;
+    }
+
+    a { text-decoration:none; }
+
+    .topbar {
+      background:var(--green);
+      color:white;
+      text-align:center;
+      padding:8px 12px;
+      font-size:13px;
+    }
+
+    header {
+      color:white;
+      text-align:center;
+      padding:55px 18px 65px;
+      background:
+        radial-gradient(circle at 15% 20%, #ffffff18, transparent 25%),
+        linear-gradient(135deg,#153b29,#39734c);
+      position:relative;
+      overflow:hidden;
+    }
+
+    .hero-content {
+      max-width:800px;
+      margin:auto;
+      position:relative;
+    }
+
+    .brand {
+      font-size:clamp(34px,7vw,55px);
+      font-weight:900;
+      margin:0 0 8px;
+      line-height:1.5;
+    }
+
+    .tagline {
+      color:#f5dfad;
+      font-size:clamp(16px,3vw,21px);
+      margin:0 0 24px;
+    }
+
+    .hero-note {
+      max-width:600px;
+      margin:0 auto 25px;
+      color:#f3f5ef;
+      font-size:16px;
+    }
+
+    .buttons {
+      display:flex;
+      flex-wrap:wrap;
+      justify-content:center;
+      gap:12px;
+    }
+
+    .btn {
+      display:inline-block;
+      padding:12px 23px;
+      border-radius:12px;
+      font-weight:bold;
+      transition:transform .2s, opacity .2s;
+    }
+
+    .btn:hover { transform:translateY(-3px); opacity:.92; }
+
+    .btn-gold {
+      background:var(--gold);
+      color:#263329;
+    }
+
+    .btn-white {
+      background:white;
+      color:var(--green);
+    }
+
+    nav {
+      background:white;
+      box-shadow:0 3px 15px #26332912;
+      padding:10px 12px;
+      display:flex;
+      justify-content:center;
+      flex-wrap:wrap;
+      gap:8px;
+      position:sticky;
+      top:0;
+      z-index:10;
+    }
+
+    nav a {
+      color:var(--green);
+      padding:7px 13px;
+      border-radius:9px;
+      font-size:14px;
+      font-weight:bold;
+    }
+
+    nav a:hover { background:#edf3ed; }
+
+    main {
+      width:min(1050px,92%);
+      margin:35px auto;
+    }
+
+    .section-title {
+      text-align:center;
+      margin:0 0 22px;
+      color:var(--green);
+      font-size:27px;
+    }
+
+    .section-subtitle {
+      text-align:center;
+      color:var(--muted);
+      margin:-12px auto 25px;
+      font-size:14px;
+    }
+
+    .photo-area {
+      display:grid;
+      grid-template-columns:repeat(2,minmax(0,1fr));
+      gap:18px;
+      margin-bottom:35px;
+    }
+
+    .photo-slot {
+      margin:0;
+      background:#eee8da;
+      border-radius:18px;
+      overflow:hidden;
+      min-height:250px;
+      position:relative;
+      box-shadow:0 7px 22px #26332912;
+    }
+
+    .photo-slot img {
+      display:block;
+      width:100%;
+      height:290px;
+      object-fit:cover;
+    }
+
+    .photo-slot figcaption {
+      position:absolute;
+      bottom:12px;
+      right:12px;
+      background:#ffffffed;
+      color:var(--green);
+      padding:6px 14px;
+      border-radius:9px;
+      font-size:13px;
+      font-weight:bold;
+    }
+
+    .fallback {
+      display:none;
+      min-height:250px;
+      height:290px;
+      place-content:center;
+      text-align:center;
+      color:var(--green);
+      font-weight:bold;
+      padding:20px;
+    }
+
+    .image-missing .fallback { display:grid; }
+    .image-missing img { display:none; }
+
+    .card {
+      background:white;
+      border-radius:19px;
+      padding:30px;
+      margin:25px 0;
+      box-shadow:0 7px 25px #26332910;
+    }
+
+    .intro { text-align:center; }
+
+    .intro p {
+      max-width:720px;
+      margin:0 auto;
+      font-size:16px;
+    }
+
+    .features {
+      display:grid;
+      grid-template-columns:repeat(3,minmax(0,1fr));
+      gap:15px;
+      margin:25px 0;
+    }
+
+    .feature {
+      background:#f0f3eb;
+      border-radius:15px;
+      padding:20px 12px;
+      text-align:center;
+    }
+
+    .feature .symbol {
+      font-size:30px;
+      display:block;
+      margin-bottom:5px;
+    }
+
+    .feature strong {
+      color:var(--green);
+      display:block;
+      font-size:16px;
+    }
+
+    .feature span {
+      color:var(--muted);
+      font-size:13px;
+    }
+
+    .contact {
+      background:#f1ead9;
+      border-radius:19px;
+      padding:30px 20px;
+      text-align:center;
+      margin-top:30px;
+    }
+
+    .contact p {
+      color:#566358;
+    }
+
+    .numbers {
+      display:flex;
+      flex-wrap:wrap;
+      justify-content:center;
+      gap:12px;
+      margin:22px 0;
+    }
+
+    .numbers a {
+      display:inline-block;
+      background:white;
+      color:var(--green);
+      border:1px solid #d8d0bf;
+      border-radius:11px;
+      padding:12px 20px;
+      font-weight:bold;
+      direction:ltr;
+      transition:.2s;
+    }
+
+    .numbers a:hover {
+      background:var(--green);
+      color:white;
+    }
+
+    .contact-buttons {
+      display:flex;
+      flex-wrap:wrap;
+      justify-content:center;
+      gap:12px;
+      margin-top:20px;
+    }
+
+    .wa {
+      background:#188b50;
+      color:white;
+    }
+
+    .map-btn {
+      background:var(--green);
+      color:white;
+    }
+
+    footer {
+      background:#153b29;
+      color:#e6eadf;
+      text-align:center;
+      padding:25px 15px;
+      font-size:13px;
+      margin-top:40px;
+    }
+
+    footer p { margin:4px; }
+
+    @media(max-width:650px) {
+      header { padding:40px 16px 48px; }
+
+      .photo-area {
+        grid-template-columns:1fr;
+      }
+
+      .photo-slot img,
+      .fallback { height:240px; }
+
+      .features {
+        grid-template-columns:1fr;
+      }
+
+      .card { padding:23px 17px; }
+
+      .numbers {
+        flex-direction:column;
+      }
+
+      .numbers a { width:100%; }
+
+      .buttons .btn,
+      .contact-buttons .btn {
+        width:100%;
+        text-align:center;
+      }
+
+      nav { gap:2px; }
+      nav a { font-size:12px; padding:7px 9px; }
+    }
   </style>
 </head>
+
 <body>
+
+  <div class="topbar">
+    تولید و عرضه نان لواش ماشینی در شهر مزارشریف
+  </div>
+
   <header>
-    <p class="brand">نان ماشینی زرافشان</p>
-    <p class="tagline">تازه و باکیفیت | شهر مزارشریف</p>
+    <div class="hero-content">
+      <h1 class="brand">نان لواش ماشینی زرافشان</h1>
+
+      <p class="tagline">
+        تازگی و کیفیت، برای سفره‌های خانواده‌ها
+      </p>
+
+      <p class="hero-note">
+        تولیدکننده نان لواش ماشینی در مزارشریف؛
+        همراه شما با نانی تازه و خوش‌طعم.
+      </p>
+
+      <div class="buttons">
+        <a class="btn btn-gold" href="#contact">
+          سفارش و تماس
+        </a>
+
+        <a class="btn btn-white"
+           href="https://wa.me/93703137070"
+           target="_blank" rel="noopener">
+          سفارش از واتساپ
+        </a>
+      </div>
+    </div>
   </header>
-  <main>
-    <!-- برای افزودن عکس، تصویر خود را کنار همین فایل بگذارید و نام آن را در src بنویسید. -->
-    <section class="photo-area" aria-label="تصاویر نانوایی و محصولات">
-      <figure class="photo-slot">
-        <img src="Photo1.JPG" alt="عکس نان لواش زرافشان" onerror="this.style.display='none';this.parentElement.insertAdjacentHTML('beforeend','<span>جای عکس اول<br>نام فایل: Photo1.JPG</span>')">
-        <figcaption>محصولات زرافشان</figcaption>
-      </figure>
-      <figure class="photo-slot">
-        <img src="Photo2.jpg" alt="عکس نانوایی زرافشان" onerror="this.style.display='none';this.parentElement.insertAdjacentHTML('beforeend','<span>جای عکس دوم<br>نام فایل: Photo2.jpg</span>')">
-        <figcaption>نانوایی زرافشان</figcaption>
-      </figure>
+
+  <nav aria-label="منوی سایت">
+    <a href="#home">صفحه اصلی</a>
+    <a href="#gallery">گالری تصاویر</a>
+    <a href="#about">درباره زرافشان</a>
+    <a href="#contact">تماس با ما</a>
+  </nav>
+
+  <main id="home">
+
+    <section id="gallery">
+      <h2 class="section-title">گالری زرافشان</h2>
+      <p class="section-subtitle">
+        نگاهی به محصولات و نانوایی زرافشان
+      </p>
+
+      <div class="photo-area">
+
+        <figure class="photo-slot">
+          <img
+            src="Photo1.JPG"
+            alt="نان لواش ماشینی زرافشان در مزارشریف"
+            loading="lazy"
+            onerror="this.parentElement.classList.add('image-missing')">
+
+          <div class="fallback">
+            جای عکس اول<br>Photo1.JPG
+          </div>
+
+          <figcaption>نان لواش زرافشان</figcaption>
+        </figure>
+
+        <figure class="photo-slot">
+          <img
+            src="Photo2.jpg"
+            alt="نانوایی ماشینی زرافشان در مزارشریف"
+            loading="lazy"
+            onerror="this.parentElement.classList.add('image-missing')">
+
+          <div class="fallback">
+            جای عکس دوم<br>Photo2.jpg
+          </div>
+
+          <figcaption>نانوایی زرافشان</figcaption>
+        </figure>
+
+      </div>
     </section>
-    <section class="intro">
-      <h2>به زرافشان خوش آمدید</h2>
-      <p>زرافشان، تولیدکننده نان لواش ماشینی در شهر مزارشریف است. هدف ما ارائه نانی تازه و باکیفیت برای سفره‌های خانواده‌هاست. برای معلومات بیشتر و سفارش، با ما تماس بگیرید.</p>
+
+    <section class="card intro" id="about">
+      <h2 class="section-title">به زرافشان خوش آمدید</h2>
+
+      <p>
+        زرافشان، تولیدکننده نان لواش ماشینی در شهر مزارشریف است.
+        هدف ما ارائه نانی تازه، خوش‌طعم و باکیفیت برای سفره‌های
+        خانواده‌هاست. از اعتماد و همراهی شما سپاسگزاریم.
+      </p>
     </section>
-    <section class="contact">
-      <h2>تماس با ما</h2>
-      <p>برای دریافت معلومات و ثبت سفارش، با یکی از شماره‌های زیر تماس بگیرید:</p>
+
+    <section class="features" aria-label="ویژگی‌های زرافشان">
+
+      <div class="feature">
+        <span class="symbol">🫓</span>
+        <strong>نان تازه</strong>
+        <span>تولید و عرضه نان لواش</span>
+      </div>
+
+      <div class="feature">
+        <span class="symbol">⭐</span>
+        <strong>کیفیت مطلوب</strong>
+        <span>توجه به کیفیت محصولات</span>
+      </div>
+
+      <div class="feature">
+        <span class="symbol">📞</span>
+        <strong>ارتباط آسان</strong>
+        <span>تماس و سفارش مستقیم</span>
+      </div>
+
+    </section>
+
+    <section class="contact" id="contact">
+      <h2 class="section-title">تماس و ثبت سفارش</h2>
+
+      <p>
+        برای دریافت معلومات و ثبت سفارش،
+        با یکی از شماره‌های زیر تماس بگیرید:
+      </p>
+
       <div class="numbers">
         <a href="tel:+93794407172">079 440 7172</a>
         <a href="tel:+93772388940">077 238 8940</a>
         <a href="tel:+93703137070">070 313 7070</a>
       </div>
-      <a class="wa" href="https://wa.me/93703137070" target="_blank" rel="noopener">ارتباط از طریق واتساپ</a>
+
+      <div class="contact-buttons">
+
+        <a class="btn wa"
+           href="https://wa.me/93703137070"
+           target="_blank" rel="noopener">
+          🟢 سفارش از طریق واتساپ
+        </a>
+
+        <a class="btn map-btn"
+           href="https://www.google.com/maps/search/?api=1&query=نان+لواش+ماشینی+زرافشان+مزارشریف"
+           target="_blank" rel="noopener">
+          📍 پیدا کردن ما در گوگل‌مپ
+        </a>
+
+      </div>
     </section>
+
   </main>
-  <footer>نان ماشینی زرافشان — مزارشریف، افغانستان</footer>
+
+  <footer>
+    <p><strong>نان لواش ماشینی زرافشان</strong></p>
+    <p>مزارشریف، افغانستان</p>
+    <p>تازگی و کیفیت، همراه سفره‌های شما</p>
+  </footer>
+
 </body>
 </html>
